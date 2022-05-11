@@ -5,6 +5,7 @@ defmodule YourApp.UserListTest do
   feature "Can see the title", %{session: session} do
     session
     |> visit("/")
+    |> assert_has(Query.text("There is some more content here"))
     |> assert_has(Query.text("Welcome to My New App!"))
   end
 end
